@@ -1,0 +1,21 @@
+<ion-view ng-controller="queCtrl">
+    <div class="bar bar-header homebar">
+        <button class="button icon ion-arrow-left-c" ng-click="back()">back</button>
+    </div>
+    <ion-content>
+        <div style="margin:8vh 0 0 2vh;">
+            <p>Multipel choice question</p>
+            <p>{{curQuestionId}} {{curQuestion.questions}}
+            
+            <!-- <ion-checkbox ng-model="filter.red" ng-repeat="c in x.choice">{{c}}</ion-checkbox> -->
+            <ul style="list-style-type:lower-alpha;margin-left:3vh;">
+                <li ng-repeat="c in curQuestion.options">
+                    <ion-radio icon="ion-android-radio-button-on" ng-model="c.userAnswer" ng-change="optionSelected(index, c)" style="border:none;margin-top:0;padding-top:0;;" ng-value="'{{c.opt}}'">{{c.opt}}</ion-radio>
+                </li>
+            </ul>
+            <a class="button icon-left ion-chevron-left button-dark"style="margin-top:5vh;" ng-click="previousQuestion()">previous</a>
+            <a class="button icon-right ion-chevron-right button-balanced" style="float:right;margin-top:5vh;" ng-click="nextQuestion()">NEXT</a>
+            <a class="button button  button-calm" style="margin:5vh 0 0 4vh;" ng-click="result()">Submit</a>
+        </div>
+    </ion-content>
+</ion-view>

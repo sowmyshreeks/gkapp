@@ -1,0 +1,26 @@
+<ion-view ng-controller="tabsCtrl">
+    <ion-content>
+        <div class="bar bar-header homebar">
+            <button class="button icon ion-edit"></button>
+            <h1 class="title">Online Test</h1>
+            <button class="button icon ion-power" ng-click="logout()"></button>
+        </div>
+        <br>
+
+     <ul>
+     <li ng-repeat="paper in paperType" ng-click="ques(paper)">
+     <button class="button button-block button-positive" style="margin-top:7vh;">
+     {{paper.type}}
+     </button>
+     </li>
+     </ul>   
+        <!--
+            <button class="button button-block button-positive" ng-click="ques()" style="margin-top:7vh;">SSC
+</button>
+        <button class="button button-block button-calm">KPSC
+</button>
+        <button class="button button-block button-balanced">BankExam
+
+</button>-->
+    </ion-content>
+</ion-view>
